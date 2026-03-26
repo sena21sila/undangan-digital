@@ -6,18 +6,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation — S & W</title>
-  <meta property="og:title" content="Undangan Pernikahan — Sena & Widya">
-  <meta property="og:description" content="Buka tautan ini untuk melihat detail lengkap acara pernikahan kami, rute peta lokasi, waktu, serta mengirimkan doa restu dan RSVP kehadiran.">
-  
+  <meta property="og:title" content="Pawiwahan — Sena & Widya">
+  <meta property="og:description" content="#SENAntiasaBersamaWIDYA">
+
   <!-- PENTING: Untuk menampilkan foto di WhatsApp, URL og:image WAJIB berupa link Absolut penuh (https://...) yang valid. -->
-  <meta property="og:image" content="https://res.cloudinary.com/drijzjqnq/image/upload/w_1200,h_630,c_fill,q_auto/v1774488217/thumbnail_sipflj.jpg">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/drijzjqnq/image/upload/w_1200,h_630,c_fill,q_auto/v1774488217/thumbnail_sipflj.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  
+
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #0a0a0a;
@@ -132,47 +135,109 @@
 
     /* MUSIC BTN (Piringan Hitam) */
     .music-btn {
-      position: fixed; top: 70px; right: 18px; z-index: 500;
-      width: 42px; height: 42px; border-radius: 50%;
+      position: fixed;
+      top: 70px;
+      right: 18px;
+      z-index: 500;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
       background: rgba(20px, 20px, 20px, 1);
       border: 1px solid rgba(200, 169, 110, .25);
-      color: transparent; font-size: 0; cursor: pointer; display: none;
-      align-items: center; justify-content: center;
-      transition: background .3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: transparent;
+      font-size: 0;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    .music-btn.active { display: flex; }
+
+    .music-btn.active {
+      display: flex;
+    }
+
     .music-btn::before {
-      content: ''; position: absolute; inset: 3px; border-radius: 50%;
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
       background: conic-gradient(#333 0deg, #111 45deg, #333 90deg, #111 135deg, #333 180deg, #111 225deg, #333 270deg, #111 315deg, #333 360deg);
-      border: 1px solid #000; z-index: 1; transition: transform 0.3s;
+      border: 1px solid #000;
+      z-index: 1;
+      transition: transform 0.3s;
     }
+
     .music-btn::after {
-      content: ''; position: absolute; width: 8px; height: 8px;
-      border-radius: 50%; background: var(--accent); z-index: 2;
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      z-index: 2;
     }
+
     .music-btn.playing::before {
       animation: spinVinyl 3.5s linear infinite;
     }
-    @keyframes spinVinyl { 100% { transform: rotate(360deg); } }
+
+    @keyframes spinVinyl {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
     /* LIGHTBOX NAV */
     .lightbox-nav {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); border: none; color: white;
-      font-size: 24px; padding: 15px 10px; cursor: pointer;
-      z-index: 1000; border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 15px 10px;
+      cursor: pointer;
+      z-index: 1000;
+      border-radius: 8px;
     }
-    .lightbox-prev { left: 10px; }
-    .lightbox-next { right: 10px; }
-    #lightbox-img { transition: opacity 0.3s; }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    #lightbox-img {
+      transition: opacity 0.3s;
+    }
 
     /* FORM SHAKE */
     @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); border: 1px solid #ff4d4f; }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(0); }
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-5px);
+        border: 1px solid #ff4d4f;
+      }
+
+      50% {
+        transform: translateX(5px);
+      }
+
+      75% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
     }
 
     /* FOLD-UNFOLD COVER */
@@ -1543,30 +1608,85 @@
 
     /* THANK YOU MODAL */
     .ty-modal {
-      position: fixed; inset: 0; z-index: 9999;
-      background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
     }
-    .ty-modal.show { opacity: 1; pointer-events: auto; }
+
+    .ty-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .ty-content {
-      background: var(--card); border: 1px solid var(--accent);
-      padding: 40px 30px; border-radius: 16px; text-align: center;
-      max-width: 90%; width: 400px;
-      transform: scale(0.9) translateY(20px); opacity: 0;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
+      max-width: 90%;
+      width: 400px;
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .ty-modal.show .ty-content { transform: scale(1) translateY(0); opacity: 1; transition-delay: 0.1s; }
-    .ty-icon { font-size: 50px; color: var(--accent); margin-bottom: 20px; line-height: 1; }
-    .ty-title { font-family: var(--serif); font-size: 32px; color: var(--accent); margin-bottom: 15px; font-style: italic; }
-    .ty-text { font-size: 15px; color: var(--fg); line-height: 1.6; opacity: 0.9; margin-bottom: 25px; }
+
+    .ty-modal.show .ty-content {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+
+    .ty-icon {
+      font-size: 50px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .ty-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .ty-text {
+      font-size: 15px;
+      color: var(--fg);
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
     .ty-btn {
-      background: transparent; color: var(--accent); border: 1px solid var(--accent);
-      padding: 10px 30px; font-family: var(--sans); font-size: 13px; font-weight: 500;
-      border-radius: 30px; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 10px 30px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 30px;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       transition: all 0.3s;
     }
-    .ty-btn:hover { background: var(--accent); color: var(--bg); }
+
+    .ty-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
 
     /* LOADER */
     #loader {
@@ -1956,7 +2076,7 @@
         <div class="sec-bg-video-overlay"></div>
       </div>
 
-      <p class="hero-label">Undangan Pernikahan</p>
+      <p class="hero-label">Undangan Pawiwahan</p>
       <div class="hero-names">
         <span id="h-p1">Sena</span><!-- GANTI -->
         <span class="amp">&amp;</span>
@@ -1995,7 +2115,9 @@
     <section style="padding:0;max-width:100%" class="fade-up sec-bg">
       <div class="couple-grid">
         <div class="couple-card">
-          <div class="couple-photo"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483119/foto-pria_ldildu.webp"></div>
+          <div class="couple-photo"><img
+              src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483119/foto-pria_ldildu.webp">
+          </div>
           <!-- GANTI: <img src="..."> -->
           <p class="couple-role">Pengantin Pria</p>
           <h2 class="couple-name">I Gusti Putu Sena Sila Adnyana</h2><!-- GANTI -->
@@ -2006,7 +2128,9 @@
           <div class="couple-sep-gem">&#10022;</div>
         </div>
         <div class="couple-card">
-          <div class="couple-photo"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/foto-wanita_atjfr4.webp"></div>
+          <div class="couple-photo"><img
+              src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/foto-wanita_atjfr4.webp">
+          </div>
           <!-- GANTI: <img src="..."> -->
           <p class="couple-role">Pengantin Wanita</p>
           <h2 class="couple-name">Ni Made Widya Purnawati</h2><!-- GANTI -->
@@ -2021,7 +2145,8 @@
     Kosong: biarkan seperti ini
   -->
     <!-- Gambar countdown: ganti class menjadi: class="sec-bg has-bg fade-up" dan tambah style="--sec-bg:url('https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483119/countdown-bg_uapusl.webp')" -->
-    <section id="countdown-section" class="sec-bg fade-up" style="--sec-bg:url('https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483119/countdown-bg_uapusl.webp')">
+    <section id="countdown-section" class="sec-bg fade-up"
+      style="--sec-bg:url('https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483119/countdown-bg_uapusl.webp')">
       <span class="section-label">Menghitung Hari</span>
       <h2 class="section-title">Menuju Hari Bahagia</h2>
       <div class="countdown-grid">
@@ -2047,7 +2172,7 @@
       <span class="section-label">Waktu &amp; Tempat</span>
       <h2 class="section-title">Detail Acara</h2>
       <div class="event-block">
-        <p class="event-type">Resepsi Pernikahan</p>
+        <p class="event-type">Resepsi</p>
         <div class="event-date">Rabu, 27 Mei 2026</div>
         <div class="event-time">14.00<span class="event-sep"> &ndash; </span>Selesai</div><!-- GANTI -->
         <p class="event-detail" id="ev-place">Br. Grokgak Gg. Bima No. 5 Sempidi<br>Kec. Mengwi, Kab. Badung &mdash;
@@ -2073,12 +2198,24 @@
       <h2 class="section-title">Momen Bersama</h2>
       <div class="gallery-grid">
         <!-- GANTI: <div class="gallery-item"><img src="..." alt="foto"></div> -->
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-1_vudpqq.webp" alt="foto1"></div>
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-2_byvqkr.webp" alt="foto2"></div>
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-3_bl3l91.webp" alt="foto3"></div>
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483122/galeri-4_jykrju.webp" alt="foto4"></div>
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483121/galeri-5_qtwwz1.webp" alt="foto5"></div>
-        <div class="gallery-item"><img src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483121/galeri-6_fzgdbd.webp" alt="foto6"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-1_vudpqq.webp"
+            alt="foto1"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-2_byvqkr.webp"
+            alt="foto2"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483120/galeri-3_bl3l91.webp"
+            alt="foto3"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483122/galeri-4_jykrju.webp"
+            alt="foto4"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483121/galeri-5_qtwwz1.webp"
+            alt="foto5"></div>
+        <div class="gallery-item"><img
+            src="https://res.cloudinary.com/drijzjqnq/image/upload/f_auto,q_auto/v1774483121/galeri-6_fzgdbd.webp"
+            alt="foto6"></div>
       </div>
     </section>
 
@@ -2181,8 +2318,11 @@
   <div class="ty-modal" id="ty-modal">
     <div class="ty-content">
       <div class="ty-icon" id="ty-icon">🤍</div>
-      <div class="title" style="font-family:var(--serif);font-size:32px;color:var(--accent);margin-bottom:15px;font-style:italic;">Terima Kasih</div>
-      <div class="ty-text" id="ty-desc">Kehadiran Anda sangat berarti bagi kami,<br><b id="ty-name" style="color:var(--accent);font-size:17px;display:block;margin-top:5px;">Nama Tamu</b></div>
+      <div class="title"
+        style="font-family:var(--serif);font-size:32px;color:var(--accent);margin-bottom:15px;font-style:italic;">Terima
+        Kasih</div>
+      <div class="ty-text" id="ty-desc">Kehadiran Anda sangat berarti bagi kami,<br><b id="ty-name"
+          style="color:var(--accent);font-size:17px;display:block;margin-top:5px;">Nama Tamu</b></div>
       <button class="ty-btn" onclick="document.getElementById('ty-modal').classList.remove('show')">Tutup</button>
     </div>
   </div>
@@ -2399,7 +2539,7 @@
     function applySettings() {
       // Update Countdown & Data
       startCountdown(settings.date || STATIC.date, settings.time || STATIC.time);
-      
+
       // --- MEDIA LOGIC (HARDCODED dari Cloudinary) ---
 
       // Hero: Video background
@@ -2411,7 +2551,7 @@
         }
         document.getElementById('hero')?.classList.add('has-bg');
       }
-      
+
       // Countdown background (gambar terpisah)
       if (MEDIA.countdownBg) {
         const cdSec = document.getElementById('countdown-section');
@@ -2420,7 +2560,7 @@
           cdSec.classList.add('has-bg');
         }
       }
-      
+
       // Foto Mempelai Pria
       if (MEDIA.pria) {
         const groomImg = document.querySelector('.couple-card:nth-child(1) .couple-photo img');
@@ -2431,7 +2571,7 @@
         const brideImg = document.querySelector('.couple-card:nth-child(3) .couple-photo img');
         if (brideImg) brideImg.src = MEDIA.wanita;
       }
-      
+
       // Galeri
       if (MEDIA.galeri && MEDIA.galeri.length > 0) {
         buildDynamicGallery(MEDIA.galeri);
@@ -2441,13 +2581,13 @@
     function buildDynamicGallery(imgs) {
       const container = document.querySelector('.gallery-grid');
       if (!container) return;
-      
+
       container.innerHTML = imgs.map((url, i) => `
         <div class="gallery-item reveal zoom">
-          <img src="${url}" alt="foto${i+1}">
+          <img src="${url}" alt="foto${i + 1}">
         </div>
       `).join('');
-      
+
       setupGallery();
       setupScrollAnim();
     }
@@ -2502,9 +2642,9 @@
 
       const dtS = yr + mon + day + 'T' + tc.substring(0, 2) + tc.substring(2, 4) + '00';
       const dtE = yr + mon + day + 'T' + hEnd + tc.substring(2, 4) + '00';
-      const title = 'Pernikahan ' + (s.couple || '');
+      const title = 'Pawiwahan ' + (s.couple || '');
       const loc = s.place || '';
-      const desc = 'Undangan pernikahan ' + (s.couple || '');
+      const desc = 'Undangan Pawiwahan ' + (s.couple || '');
 
       if (type === 'google') {
         window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dtS}/${dtE}&location=${encodeURIComponent(loc)}&details=${encodeURIComponent(desc)}`, '_blank');
@@ -2533,11 +2673,11 @@
       const status = statusEl.value;
       const jumlah = parseInt(document.getElementById('rsvp-jumlah').value) || 1;
       const catatan = document.getElementById('rsvp-pesan').value.trim();
-      
-      if (!nama) { 
+
+      if (!nama) {
         namaEl.style.animation = 'shake 0.4s';
         setTimeout(() => namaEl.style.animation = '', 400);
-        showToast('Nama wajib diisi'); return; 
+        showToast('Nama wajib diisi'); return;
       }
       // Auto capitalize
       nama = nama.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
@@ -2549,7 +2689,7 @@
         const r = await api('submitRsvp', { idTamu: guestToken || ('guest-' + Date.now()), nama, status, jumlah, catatan });
         if (r.ok) {
           showToast('Kehadiran Terkonfirmasi!');
-          
+
           // Tampilkan Modal Spesial Berdasarkan Status
           let icon = '🤍', desc = 'Kehadiran Anda sangat berarti bagi kami,';
           if (status === 'tidak') {
@@ -2560,7 +2700,7 @@
           document.getElementById('ty-icon').textContent = icon;
           document.getElementById('ty-desc').innerHTML = `${desc}<br><b id="ty-name" style="color:var(--accent);font-size:17px;display:block;margin-top:5px;">${esc(nama)}</b>`;
           document.getElementById('ty-modal').classList.add('show');
-          
+
           document.getElementById('rsvp-note').innerHTML = '';
           btn.textContent = 'Terkirim \u2713';
           await Promise.all([loadRsvpStats(), loadRsvpSlideshow()]);
@@ -2601,12 +2741,12 @@
 
       let html = '';
       const renderItem = (item, idx) => {
-        const st = (item.status||'').toLowerCase();
+        const st = (item.status || '').toLowerCase();
         let badge = '';
-        if (st==='hadir') badge = '<span class="chat-status hadir"><i class="ri-check-line"></i> Hadir</span>';
-        else if (st==='tidak') badge = '<span class="chat-status tidak"><i class="ri-close-line"></i> Tidak Hadir</span>';
-        else if (st==='ragu') badge = '<span class="chat-status ragu"><i class="ri-question-mark"></i> Ragu</span>';
-        
+        if (st === 'hadir') badge = '<span class="chat-status hadir"><i class="ri-check-line"></i> Hadir</span>';
+        else if (st === 'tidak') badge = '<span class="chat-status tidak"><i class="ri-close-line"></i> Tidak Hadir</span>';
+        else if (st === 'ragu') badge = '<span class="chat-status ragu"><i class="ri-question-mark"></i> Ragu</span>';
+
         return `
         <div class="chat-bubble">
           <div class="chat-header">
@@ -2648,16 +2788,16 @@
       // Swipe logic lightox
       let sx = 0;
       const lb = document.getElementById('lightbox');
-      lb.addEventListener('touchstart', e => sx = e.changedTouches[0].screenX, {passive:true});
+      lb.addEventListener('touchstart', e => sx = e.changedTouches[0].screenX, { passive: true });
       lb.addEventListener('touchend', e => {
         const ex = e.changedTouches[0].screenX;
         if (ex < sx - 40) navGallery(1);
         else if (ex > sx + 40) navGallery(-1);
-      }, {passive:true});
+      }, { passive: true });
     }
-    
+
     function navGallery(step) {
-      if(!galItems.length) return;
+      if (!galItems.length) return;
       galIdx = (galIdx + step + galItems.length) % galItems.length;
       const imgEl = document.getElementById('lightbox-img');
       imgEl.style.opacity = 0;
