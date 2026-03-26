@@ -797,7 +797,11 @@ function buildMsg(guest) {
     } catch(e) {}
   }
 
-  let msg = (s.template||DEFAULT_TEMPLATE)
+  let tmpl = s.template || DEFAULT_TEMPLATE;
+  // Auto-perbaikan jika user masih pakai template lama yang memakan enter
+  tmpl = tmpl.replace(/\*Tempat\s*:\s*\{tempat\}\*/gi, '*Tempat :* {tempat}');
+
+  let msg = tmpl
     .replace(/{nama}/g,guest.nama).replace(/{pasangan}/g,s.couple||'')
     .replace(/{tanggal}/g,evDate).replace(/{waktu}/g,s.time||'')
     .replace(/{tempat}/g,s.place||'').replace(/{link}/g,link);
