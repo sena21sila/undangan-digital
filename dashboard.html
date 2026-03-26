@@ -787,10 +787,23 @@ function resetTemplate() {
 function buildMsg(guest) {
   const s = getSettingsFromForm();
   const link = (s.baseUrl||'') + '?to=' + guest.id;
-  return (s.template||DEFAULT_TEMPLATE)
+  
+  // Format tanggal jika terdeteksi string ISO dari Sheets
+  let evDate = s.date || '';
+  if (evDate.includes('T') && evDate.includes('Z')) {
+    try {
+      const d = new Date(evDate);
+      if (!isNaN(d)) evDate = d.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    } catch(e) {}
+  }
+
+  let msg = (s.template||DEFAULT_TEMPLATE)
     .replace(/{nama}/g,guest.nama).replace(/{pasangan}/g,s.couple||'')
-    .replace(/{tanggal}/g,s.date||'').replace(/{waktu}/g,s.time||'')
+    .replace(/{tanggal}/g,evDate).replace(/{waktu}/g,s.time||'')
     .replace(/{tempat}/g,s.place||'').replace(/{link}/g,link);
+    
+  // Ganti tag <br> jadi kalang enter (\n) untuk dikirim ke WA
+  return msg.replace(/<br\s*\/?>/gi, '\n');
 }
 function waUrl(no, msg) { return `https://wa.me/${no}?text=${encodeURIComponent(msg)}`; }
 
