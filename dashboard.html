@@ -581,8 +581,8 @@ function initDashboard() {
 
 async function fetchAll() {
   await Promise.all([fetchGuests(), fetchSettingsFromSheet()]);
-  if (document.getElementById('tab-rsvp').classList.contains('active')) await loadRsvp();
-  if (document.getElementById('tab-ucapan').classList.contains('active')) await loadUcapan();
+  if (document.getElementById('tab-rsvp')?.classList.contains('active')) await loadRsvp();
+  if (document.getElementById('tab-ucapan')?.classList.contains('active')) await loadUcapan();
 }
 
 // ====================================================
