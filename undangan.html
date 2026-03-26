@@ -2256,6 +2256,9 @@
       guestToken = new URLSearchParams(window.location.search).get('to');
       startCountdown(STATIC.date, STATIC.time);
 
+      // Terapkan media Cloudinary SEGERA (hardcoded, tidak perlu tunggu API)
+      applySettings();
+
       const promises = [loadSettings(), loadRsvpStats(), loadRsvpSlideshow()];
 
       if (guestToken) {
